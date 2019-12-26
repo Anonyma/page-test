@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="container">
+        <div class="nes-container with-title is-centered is-dark" style="margin-top: 15px;">
+            <p class="title">Hello!</p>
+            <p>Welcome to my personal page! <br>
+            Choose one of the following options:</p>
+            <br>
+            <div class="row"  style="text-align: center;">
+            <section class="message -left">
+                <div class="nes-balloon from-left" style="width: 70%; color: black">
+                        <div class="six columns">
+                            <label>
+                                <input type="radio" class="nes-radio" name="devorperson" checked />
+                                <span>Professional</span>
+                            </label></div>
+                        <div class="six columns">
+                            <label>
+                                <input type="radio" class="nes-radio" name="devorperson" />
+                                <span>Personal</span>
+                            </label></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <br>
+
+        <br>
+        <!-- <div class="nes-container with-title">
+            <p class="title">Courses & Books </p>
+            <i class="snes-jp-logo is-small"></i>
+            <p>Last games I played:</p>
+            <br>
+            <div style="margin-left: 15px; font-size: 10px" class="lists">
+                <ul class="nes-list is-circle">
+                    <li>· The Witcher 3 (Switch)</li>
+                    <li>· Untitled Goose Game</li>
+                    <li>+ Thou hast had a good afternoon</li>
+                    <li>Good night.</li>
+                </ul>
+            </div>
+        </div> -->
+        <br>
+        <div class="nes-container with-title is-dark">
+            <p class="title">Games </p>
+            <i class="snes-jp-logo is-small"></i>
+            <p>Currently playing:</p>
+            <br>
+            <div style="margin-left: 15px; font-size: 10px" class="lists">
+                <ul class="nes-list is-circle">
+                    <li><i class="nes-icon is-small star"></i> The Witcher 3 (Switch)</li>
+                    <li><i class="nes-icon is-small star"></i> Untitled Goose Game</li>
+                    <li><i class="nes-icon is-small heart"></i> The Red Strings Club</li>
+                    <li><i class="nes-icon is-small heart"></i> Undertale</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="one column">One</div>
+            <div class="eleven columns">Eleven</div>
+        </div>
+        <a class="nes-btn" href="#">Normal</a>
+
+        <button type="button" class="nes-btn is-primary">Primary</button>
+        <button type="button" class="nes-btn is-success">Success</button>
+        <button type="button" class="nes-btn is-warning">Warning</button>
+        <button type="button" class="nes-btn is-error">Error</button>
+        <button type="button" class="nes-btn is-disabled">Disabled</button>
+
+        <label class="nes-btn">
+            <span>Select your file</span>
+            <input type="file">
+        </label>
+
+
+        <ul id="tabs">
+            <li><a href="#about"> <label>
+                        <input type="radio" class="nes-radio" name="answer1" checked />
+                        <span>Yes</span>
+                    </label></a></li>
+            <li><a href="#advantages"><label>
+                        <input type="radio" class="nes-radio" name="answer2" checked />
+                        <span>YeTHIRDs</span>
+                    </label></a></li>
+            <li><a href="#usage"><label>
+                        <input type="radio" class="nes-radio" name="answer3" checked />
+                        <span>YeTHIRDs</span>
+                    </label></a></li>
+        </ul>
+
+        <div class="tabContent" id="about">
+            <h2>About JavaScript tabs</h2>
+            <div>
+                <p>JavaScript tabs partition your Web page content into tabbed sections. Only one section at a time is
+                    visible.</p>
+                <p>The code is written in such a way that the page degrades gracefully in browsers that don't support
+                    JavaScript or CSS.</p>
+            </div>
+        </div>
+
+        <div class="tabContent" id="advantages">
+            <div class="nes-container is-rounded is-dark">
+                <h2>Advantages of tabs</h2>
+                <p>Good morning. Thou hast had a good night's sleep, I hope.</p>
+            </div>
+        </div>
+
+        <div class="tabContent" id="usage">
+            <div class="nes-container is-rounded is-dark">
+                <h2>Advantages of tabs 3</h2>
+                <p>Good morning. Thou hast had a good night's sleep, I hope.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tabLinks = new Array();
+        var contentDivs = new Array();
+
+        function init() {
+
+            // Grab the tab links and content divs from the page
+            var tabListItems = document.getElementById('tabs').childNodes;
+            for (var i = 0; i < tabListItems.length; i++) {
+                if (tabListItems[i].nodeName == "LI") {
+                    var tabLink = getFirstChildWithTagName(tabListItems[i], 'A');
+                    var id = getHash(tabLink.getAttribute('href'));
+                    tabLinks[id] = tabLink;
+                    contentDivs[id] = document.getElementById(id);
+                }
+            }
+
+            // Assign onclick events to the tab links, and
+            // highlight the first tab
+            var i = 0;
+
+            for (var id in tabLinks) {
+                tabLinks[id].onclick = showTab;
+                tabLinks[id].onfocus = function () {
+                    this.blur()
+                };
+                if (i == 0) tabLinks[id].className = 'selected';
+                i++;
+            }
+
+            // Hide all content divs except the first
+            var i = 0;
+
+            for (var id in contentDivs) {
+                if (i != 0) contentDivs[id].className = 'tabContent hide';
+                i++;
+            }
+        }
+
+        function showTab() {
+            var selectedId = getHash(this.getAttribute('href'));
+
+            // Highlight the selected tab, and dim all others.
+            // Also show the selected content div, and hide all others.
+            for (var id in contentDivs) {
+                if (id == selectedId) {
+                    tabLinks[id].className = 'selected';
+                    contentDivs[id].className = 'tabContent';
+                } else {
+                    tabLinks[id].className = '';
+                    contentDivs[id].className = 'tabContent hide';
+                }
+            }
+
+            // Stop the browser following the link
+            return false;
+        }
+
+        function getFirstChildWithTagName(element, tagName) {
+            for (var i = 0; i < element.childNodes.length; i++) {
+                if (element.childNodes[i].nodeName == tagName) return element.childNodes[i];
+            }
+        }
+
+        function getHash(url) {
+            var hashPos = url.lastIndexOf('#');
+            return url.substring(hashPos + 1);
+        }
+
+        init();</script>
+</body>
+
+</html>
