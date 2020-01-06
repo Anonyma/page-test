@@ -12,10 +12,13 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -25,15 +28,15 @@
     <div class="container">
         <div class="nes-container with-title is-centered is-dark" style="margin-top: 15px;">
             <p class="title">Hello!</p>
-            <p>Welcome to my personal page! <br>
+            <p><span class="only-desktop"> Welcome to my personal page! </span><br>
                 Choose one of the following options:</p>
-            <br>
+            <!-- <br>
             <span class="nes-text is-warning" style="font-size: 24px;">🔧 🚧 Page under construction! 🚧 🔧</span>
-            <br>
+            <br> -->
             <br>
             <div class="row" style="text-align: center;">
                 <section class="message -left">
-                    <div class="nes-balloon from-left" style="width: 70%; color: black">
+                    <div id="prof-pers-balloon" class="nes-balloon from-left">
                         <div id="professional_option" class="six columns">
                             <label>
                                 <input type="radio" class="nes-radio" name="devorperson" checked />
@@ -46,31 +49,101 @@
                             </label></div>
                     </div>
                 </section>
+
+                <!-- Version without balloon: -->
+                <!-- <div class="only-mobile">
+                        <div id="professional_option_mob" class="six columns">
+                                <label>
+                                    <input type="radio" class="nes-radio" name="devorpersonmob" checked />
+                                    <span>Professional</span>
+                                </label></div>
+                            <div id="personal_option_mob" class="six columns">
+                                <label>
+                                    <input type="radio" class="nes-radio" name="devorpersonmob" />
+                                    <span>Personal</span>
+                                </label></div>
+                </div> -->
             </div>
             <!-- <h4>(Page under construction!)</h4> -->
         </div>
-        <div style="text-align: center;">
+        <div id="social-media-block" style="text-align: center;">
             <a href="https://twitter.com/Anonyma_z" target="_blank"><i class="nes-icon twitter is-medium"></i></a>
             <a href="https://github.com/Anonyma" target="_blank"><i class="nes-icon github is-medium"></i></a>
-            <a href="https://www.linkedin.com/in/zoeisabelsenon/" target="_blank"><i class="nes-icon linkedin is-medium"></i></a>
+            <a href="https://www.linkedin.com/in/zoeisabelsenon/" target="_blank"><i
+                    class="nes-icon linkedin is-medium"></i></a>
         </div>
         <!-- <br> -->
         <div id="professional_block">
-                <div class="nes-container with-title is-dark">
-                        <!-- <p class="title" style="font-size: 30px; margin-top: -30px;">🖥️ </p> -->
-                        <p><span style="font-size: 22px;"> 🖥️</span> Technologies:</p>
-                        <br>
-                        <div style="margin-left: 15px; font-size: 10px" class="lists">
-                            <ul class="nes-list is-circle">
-                                <li><i class="nes-icon is-small star"></i> <span style="text-decoration: underline;"> Main</span>: Node, AWS</li>
-                                <li><i class="nes-icon is-small star"></i> <span style="text-decoration: underline;"> Others:</span> Redis, Docker, Mongo </li>
-                                <li><i class="nes-icon is-small star"></i> <span style="text-decoration: underline;"> Testing:</span> Jest, Chai</li>
-                                <li><i class="nes-icon is-small heart"></i> <span style="font-style: italic;"> Previous frontend experience with</span> React & Vue</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="nes-container with-title is-dark">
+                <!-- <p class="title" style="font-size: 30px; margin-top: -30px;">🖥️ </p> -->
+                <p><span style="font-size: 22px;"> 🖥️</span> Technologies:</p>
+                <br>
+                <div id="technologies-block" class="lists">
+                    <ul class="nes-list is-circle">
+                        <li><i class="nes-icon is-small star"></i> <span style="text-decoration: underline;">
+                                Main</span>: Node, AWS</li>
+                        <li><i class="nes-icon is-small star"></i> <span style="text-decoration: underline;">
+                                Others:</span> Redis, Docker, MongoDB, message/job queues (Bull, SQS) </li>
+                        <li><i class="nes-icon is-small star"></i> <span style="text-decoration: underline;">
+                                Testing:</span> Jest, Chai</li>
+                        <li><i class="nes-icon is-small heart"></i> <span style="font-style: italic;"> Previous frontend
+                                experience with</span> React & Vue</li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="nes-container with-title">
+                <p class="title">Info </p>
+                <div id="short_story" style="margin-left: 15px; font-size: 10px; padding: 10px;">
+                    <p>
+                        I'm a mid-level <u>backend developer</u> specializing in Node and AWS (but always open to new
+                        technologies)
+                    </p>
+                    <p>
+                        I have worked at companies which strongly enforced <u>good coding practices and testing</u> (as
+                        well as
+                        code reviews),
+                        and have previous professional experience as a full-time frontend developer using React and Vue.
+                    </p>
                     <br>
-                <div class="nes-container with-title">
+                    <button type="button" id="professional_readmore" class="nes-btn is-error"
+                        style="height: 30px; font-size: 10px;">Read
+                        more</button>
+                </div>
+                <!-- display: none; -->
+                <div id="long_story" style="margin-left: 20px; font-size: 10px;  padding: 10px; display: none;">
+                    <ul class="nes-list is-circle">
+                        <li>
+                            I have a special interest in functional programming languages
+                        </li>
+                        <p>
+                            Mainly in Elixir & Haskell, and would be open to adopting them (or Golang)
+                        </p>
+                        <br>
+                        <p>
+                            <i>
+                                Currently in the process of organizing a local functional programming meetup/study
+                                group, starting with Haskell</i>
+                        </p>
+                        <br>
+                        <li> <span class="nes-text is-error"><u>For recruiters:</u></span></li>
+                    </ul>
+                    <ul class="nes-list is-disc" style="margin-left: 20px; font-size: 10px;  padding: 10px; ">
+                        <li> I'm interested in companies solving <b>complex problems</b> with <b>modern technologies</b>
+                            in need of insatiable and quick learners.
+                        </li>
+                        <p><i> Focus on quality is a must. <span class="nes-text is-disabled">They should enforce good
+                                    coding practices, testing and use of developer tools (or have plans to do so in the
+                                    near future).
+                                </span> </i></p>
+                        <!-- <li> I currently work as a freelance developer for a few consolidated startups in Valencia but I
+                            would like to focus on a single project and see it grow long-term.</li> -->
+                    </ul>
+
+                </div>
+
+            </div>
+            <!-- <div class="nes-container with-title">
                         <p class="title">Info </p>
                         <p>Blah blah:</p>
                         <br>
@@ -82,7 +155,7 @@
                                 <li><i class="nes-icon is-small heart"></i> Eoeoeoe</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
         </div>
         <div id="personal_block" style="display: none;">
             <div class="nes-container with-title is-dark">
@@ -118,7 +191,7 @@
         <br>
 
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="one column">One</div>
             <div class="eleven columns">Eleven</div>
         </div>
@@ -173,7 +246,7 @@
                 <h2>Advantages of tabs 3</h2>
                 <p>Good morning. Thou hast had a good night's sleep, I hope.</p>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script>
@@ -184,88 +257,103 @@
         const professionalDiv = document.getElementById('professional_block');
         const personalButton = document.getElementById('personal_option');
         const personalDiv = document.getElementById('personal_block');
+        
+        // const professionalButtonMobile = document.getElementById('professional_option_mob');
+        // const personalButtonMobile = document.getElementById('personal_option_mob');
+
+        const professionalReadMoreButton = document.getElementById('professional_readmore');
+        const professionalLongStory = document.getElementById('long_story');
+
 
         professionalButton.onclick = showProfessionalDiv
         personalButton.onclick = showPersonalDiv
-        function init() {
+        // professionalButtonMobile.onclick = showProfessionalDiv
+        // personalButtonMobile.onclick = showPersonalDiv
+        professionalReadMoreButton.onclick = showProfessionalReadMore
 
-
-            // Grab the tab links and content divs from the page
-            const tabListItems = document.getElementById('tabs').childNodes;
-            for (let i = 0; i < tabListItems.length; i++) {
-                if (tabListItems[i].nodeName == "LI") {
-                    const tabLink = getFirstChildWithTagName(tabListItems[i], 'A');
-                    const id = getHash(tabLink.getAttribute('href'));
-                    tabLinks[id] = tabLink;
-                    contentDivs[id] = document.getElementById(id);
-                }
-            }
-
-            // Assign onclick events to the tab links, and
-            // highlight the first tab
-            let ctr = 0;
-
-            for (let id in tabLinks) {
-                tabLinks[id].onclick = showTab;
-                tabLinks[id].onfocus = function () {
-                    this.blur()
-                };
-                if (ctr == 0) tabLinks[id].className = 'selected';
-                ctr++;
-            }
-
-            // Hide all content divs except the first
-            let ctr2 = 0;
-
-            for (let id in contentDivs) {
-                if (ctr2 != 0) contentDivs[id].className = 'tabContent hide';
-                ctr2++;
-            }
-        }
 
         function showProfessionalDiv() {
-            console.log('eeh');
             professionalDiv.style.display = 'block'
             personalDiv.style.display = 'none'
         }
 
         function showPersonalDiv() {
-            console.log('eehy');
             personalDiv.style.display = 'block'
             professionalDiv.style.display = 'none'
         }
 
-        function showTab() {
-            const selectedId = getHash(this.getAttribute('href'));
-
-            // Highlight the selected tab, and dim all others.
-            // Also show the selected content div, and hide all others.
-            for (let id in contentDivs) {
-                if (id == selectedId) {
-                    tabLinks[id].className = 'selected';
-                    contentDivs[id].className = 'tabContent';
-                } else {
-                    tabLinks[id].className = '';
-                    contentDivs[id].className = 'tabContent hide';
-                }
-            }
-
-            // Stop the browser following the link
-            return false;
+        function showProfessionalReadMore() {
+            professionalLongStory.style.display = 'block'
+            professionalReadMoreButton.style.display = 'none'
         }
 
-        function getFirstChildWithTagName(element, tagName) {
-            for (let i = 0; i < element.childNodes.length; i++) {
-                if (element.childNodes[i].nodeName == tagName) return element.childNodes[i];
-            }
-        }
+            // function init() {
+        // Grab the tab links and content divs from the page
+        // const tabListItems = document.getElementById('tabs').childNodes;
+        // for (let i = 0; i < tabListItems.length; i++) {
+        //     if (tabListItems[i].nodeName == "LI") {
+        //         const tabLink = getFirstChildWithTagName(tabListItems[i], 'A');
+        //         const id = getHash(tabLink.getAttribute('href'));
+        //         tabLinks[id] = tabLink;
+        //         contentDivs[id] = document.getElementById(id);
+        //     }
+        // }
 
-        function getHash(url) {
-            const hashPos = url.lastIndexOf('#');
-            return url.substring(hashPos + 1);
-        }
+        // Assign onclick events to the tab links, and
+        // highlight the first tab
+        // let ctr = 0;
 
-        init();</script>
+        // for (let id in tabLinks) {
+        //     tabLinks[id].onclick = showTab;
+        //     tabLinks[id].onfocus = function () {
+        //         this.blur()
+        //     };
+        //     if (ctr == 0) tabLinks[id].className = 'selected';
+        //     ctr++;
+        // }
+
+        // Hide all content divs except the first
+        //     let ctr2 = 0;
+
+        //     for (let id in contentDivs) {
+        //         if (ctr2 != 0) contentDivs[id].className = 'tabContent hide';
+        //         ctr2++;
+        //     }
+        // }
+
+        // function showTab() {
+        //     const selectedId = getHash(this.getAttribute('href'));
+
+        //     // Highlight the selected tab, and dim all others.
+        //     // Also show the selected content div, and hide all others.
+        //     for (let id in contentDivs) {
+        //         if (id == selectedId) {
+        //             tabLinks[id].className = 'selected';
+        //             contentDivs[id].className = 'tabContent';
+        //         } else {
+        //             tabLinks[id].className = '';
+        //             contentDivs[id].className = 'tabContent hide';
+        //         }
+        //     }
+
+        //     // Stop the browser following the link
+        //     return false;
+        // }
+
+        // function getFirstChildWithTagName(element, tagName) {
+        //     for (let i = 0; i < element.childNodes.length; i++) {
+        //         if (element.childNodes[i].nodeName == tagName) return element.childNodes[i];
+        //     }
+        // }
+
+        // function getHash(url) {
+        //     const hashPos = url.lastIndexOf('#');
+        //     return url.substring(hashPos + 1);
+        // }
+    // }
+
+    //     init();
+    </script>
 </body>
 
 </html>
